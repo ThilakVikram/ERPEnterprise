@@ -21,6 +21,8 @@ jobs:
       - name: install uv
         run: |
           pip install uv
+          ls -all
+          cd backend
           uv --version
           uv sync
           uv run pytest
