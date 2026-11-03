@@ -42,4 +42,4 @@ jobs:
             echo "sync done"
             sudo systemctl stop custom_fast_api.service
             sudo systemctl start custom_fast_api.service
-            echo "application running"
+            echo "application running properly"
