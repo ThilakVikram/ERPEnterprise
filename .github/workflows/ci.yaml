@@ -39,4 +39,7 @@ jobs:
             pwd
             where uv
             echo "uv path printed"
-            # uv run fastapi run app/main.py
+            pwd
+            uv sync
+            echo "uv synced"
+            uv run fastapi run app/main.py
