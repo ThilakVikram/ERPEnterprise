@@ -37,5 +37,5 @@ jobs:
             git pull origin main
             cd backend
             pwd
-            uv sync
-            uv run fastapi run app/main.py
+            /home/ubuntu/.local/bin/uv sync
+            /home/ubuntu/.local/bin/uv run fastapi run app/main.py
