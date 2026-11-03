@@ -40,5 +40,6 @@ jobs:
             echo "current path"
             /home/ubuntu/.local/bin/uv sync
             echo "sync done"
-            sudo systemctl restart custom_fast_api.service
+            sudo systemctl stop custom_fast_api.service
+            sudo systemctl start custom_fast_api.service
             echo "application running"
