@@ -40,5 +40,5 @@ jobs:
             echo "current path"
             /home/ubuntu/.local/bin/uv sync
             echo "sync done"
-            /home/ubuntu/.local/bin/uv run fastapi run app/main.py
+            /home/ubuntu/.local/bin/uv run fastapi run app/main.py & > pid.txt
             echo "application running"
