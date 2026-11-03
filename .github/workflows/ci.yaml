@@ -26,3 +26,12 @@ jobs:
           uv --version
           uv sync
           uv run pytest
+      - name: pull on deployment server
+        uses: appleboy/ssh-action@v1.2.5
+        with:
+          host: ${{secrets.d_host}}
+          username: ${{secrets.d_username}}
+          key: ${{secrets.d_key}}
+          script: |
+            cd Thilak_Automation_Code/ciTest
+            git pull origin main
