@@ -33,13 +33,19 @@ jobs:
           username: ${{secrets.d_username}}
           key: ${{secrets.d_key}}
           script: |
-            cd Thilak_Automation_Code/ciTest
+            set -e
+            APP_DIR="/home/ubuntu/Thilak_Automation_Code/ciTest/backend"
+            UV="/home/ubuntu/.local/bin/uv"
+            SERVICE="custom_fast_api.service"
+            echo "Starting deployment..."
+            cd /home/ubuntu/Thilak_Automation_Code/ciTest
+            echo "Pulling latest code..."
             git pull origin main
-            cd backend
-            pwd
-            echo "current path"
-            /home/ubuntu/.local/bin/uv sync
-            echo "sync done"
-            sudo systemctl stop custom_fast_api.service
-            sudo systemctl start custom_fast_api.service
-            echo "application running properly"
+            cd "$APP_DIR"
+            echo "Syncing dependencies..."
+            "$UV" sync --locked
+            echo "Restarting FastAPI service..."
+            sudo systemctl restart "$SERVICE"
+            echo "Checking service status..."
+            sudo systemctl is-active --quiet "$SERVICE"
+            echo "Application is running properly!"
