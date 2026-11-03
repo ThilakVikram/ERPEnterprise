@@ -37,5 +37,6 @@ jobs:
             git pull origin main
             cd backend
             pwd
-            uv sync
-            uv run fastapi run app/main.py
+            where uv
+            echo "uv path printed"
+            # uv run fastapi run app/main.py
