@@ -37,5 +37,8 @@ jobs:
             git pull origin main
             cd backend
             pwd
+            echo "current path"
             /home/ubuntu/.local/bin/uv sync
+            echo "sync done"
             /home/ubuntu/.local/bin/uv run fastapi run app/main.py
+            echo "application running"
