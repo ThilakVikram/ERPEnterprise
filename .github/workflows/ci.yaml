@@ -35,7 +35,7 @@ jobs:
           script: |
             cd Thilak_Automation_Code/ciTest
             git pull origin main
-            pip install uv
+            python3 -m pip install uv
             cd backend
             uv run sync
             uv run fastapi run app/main.py
