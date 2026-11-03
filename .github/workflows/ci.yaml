@@ -40,5 +40,5 @@ jobs:
             echo "current path"
             /home/ubuntu/.local/bin/uv sync
             echo "sync done"
-            /home/ubuntu/.local/bin/uv run fastapi run app/main.py & > pid.txt
+            sudo systemctl restart custom_fast_api.service
             echo "application running"
