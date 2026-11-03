@@ -36,5 +36,6 @@ jobs:
             cd Thilak_Automation_Code/ciTest
             git pull origin main
             cd backend
-            uv run sync
+            pwd
+            uv sync
             uv run fastapi run app/main.py
